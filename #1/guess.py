@@ -1,8 +1,10 @@
-# BONUS - jeu plus petite / plus grande with  cheating detection
+# BONUS - jeu plus petite / plus grande avec detection de tricherie
+# BONUS - game of samller / bigger with cheating detection
 import random
 
+                # Ici, on a les nombres que sont strictement plus petit et plus grand 
 Poss = [0, 101] # This array will hold the smallest and biggest integers that still can be guessed
-                         # We initialize with the intervals
+                # We initialize with the intervals given ([0-100])
 
 print("Mémorisez un nombre entre 1 et 100, je vais essayer de le retrouver. Et ne trichez pas ensuite")
 
