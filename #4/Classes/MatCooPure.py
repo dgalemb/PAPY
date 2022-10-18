@@ -1,4 +1,5 @@
 import random
+import time
 from sys import getsizeof
 import numpy as np
 
@@ -55,7 +56,7 @@ class MatCooPure():
     def mat_vec(mat, vec):
         mat = mat.affichage(mat.n, mat.m, False)
         
-        result = [[0 for k in range(1)] for o in range(len(mat))]
+        result = [[0 for _ in range(1)] for _ in range(len(mat))]
         for i in range(len(mat)):
             for j in range(len(mat[0])):
                 result[i][0] += mat[i][j] * vec[j]
@@ -70,18 +71,37 @@ class MatCooPure():
             vec = [(k, []) for k in vec]
             for k in range(mat.non_n):
                 vec[mat.matrice[k][1]][1].append({mat.matrice[k][0]: mat.matrice[k][2] * vec[mat.matrice[k][1]][0]})
+    
+        result = [0 for _ in range(mat.n)]
 
-        return vec
+        for k in vec:
+            for j in k[1]:
+                result[list(j.keys())[0]] += list(j.values())[0]
+                
+                
+
+        return result
 
 
+n = 10**3
+m = 10**3
+data = 10**6
 
+mat = MatCooPure(n, m, data)
+vec = np.random.rand(m, 1)
 
-mat = MatCooPure(3, 3, 9)
-mat.affichage(3, 3)
+matr = np.matrix(mat.affichage(n, m, printt = False))
+vecc = np.array(vec)
 
-print(mat.mat_vec(mat, vec = [2, 1, 1]))
-#print(mat.matrice)
+start = time.process_time()
+mat.mat_vec(mat, vec)
+print(f'My slow function {(time.process_time() - start)}')
 
-matr = np.matrix(MatCooPure(3, 3, 9).affichage(3, 3, printt = False))
-vecc = np.array([2,1,1])
-print(np.dot(matr, vecc))
+start = time.process_time()
+mat.mat_vec_rap(mat, vec)
+print(f'My quick function {(time.process_time() - start)}')
+
+start = time.process_time()
+np.dot(matr, vecc)
+print(f'Numpy function {(time.process_time() - start)}')
+
