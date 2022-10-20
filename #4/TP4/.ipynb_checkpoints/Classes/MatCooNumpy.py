@@ -3,7 +3,6 @@ import time
 from sys import getsizeof
 import numpy as np
 
-
 class MatCooNp:
 
     def __init__(self, n, m, n_non_null):
