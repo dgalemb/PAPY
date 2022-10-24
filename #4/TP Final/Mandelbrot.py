@@ -21,26 +21,27 @@ class MandelJulia:
 
         return True
 
-    def plot(self, z = complex(0,0), z_min = complex(-2,0), z_max = complex(2,0), pixel_size = 3, max_iter = 10):
-        x_min = z_min.real
-        x_max = z_max.real
+    def plot(self, z = complex(0,0), z_min = complex(-2,-2), z_max = complex(2,2), pixel_size = 3e-2, max_iter = 10):
+        x_min = min(z_min.real, z_max.real)
+        x_max = max(z_min.real, z_max.real)
 
-        xstep = np.linspace(x_min, x_max, pixel_size)
-        ystep = np.linspace(x_min, x_max, pixel_size)
+        y_min = min(z_min.imag, z_max.imag)
+        y_max = max(z_min.imag, z_max.imag)
 
-     
+        xstep = np.arange(x_min, x_max, pixel_size)
+        ystep = np.arange(y_min, y_max, pixel_size)
+
         grid = xstep[:, None] + 1j*ystep
- 
         grid = np.array(list(it.chain.from_iterable(grid)))
     
+        #mask = np.vectorize(self.in_set(grid, z, max_iter))(grid, z, max_iter)
         mask = [self.in_set(k, z, max_iter) for k in grid]
-
 
         true_grid = np.array(grid)[mask]
         reals = [k.real for k in true_grid]
         imags = [k.imag for k in true_grid]
         
-        plot.scatter(reals, imags, color = "Red", marker = ",", s = 1)  
+        plot.plot(reals, imags, color = "Red")  
         plot.gca().set_aspect("equal")  
         plot.axis("off")  
         plot.tight_layout()  
@@ -59,4 +60,4 @@ def is_in_Mandelbrot(c, max_iter = 500):
     return mand.in_set(c, max_iter)
 
 mand = MandelJulia()
-print(mand.plot(pixel_size=1000, c = complex(0, -0.8), max_iter=50))
+print(mand.plot(pixel_size=5e-3, max_iter=15))
