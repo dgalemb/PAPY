@@ -52,13 +52,13 @@ def complex_matrix(x_min, x_max, y_min, y_max, pixel_size):
     im1 = np.arange(y_min, y_max, pixel_size)  
     return re1[np.newaxis, :] + im1[:, np.newaxis] * 1j  
 
-def plot_mandelbrot(zmin, zmax, pixel_size, max_iter, figname):
+def plot_mandelbrot(zmin=-2-2j, zmax=2+2j, pixel_size=5e-5, max_iter=100, figname='hey'):
     c = complex_matrix(zmin.real, zmax.real, zmin.imag, zmax.imag, pixel_size=pixel_size)
-    data = ~is_in_Mandelbrot(c, max_iter)
+    data = ~is_in_Mandelbrot(c, max_iter = max_iter)
     image = Image.fromarray(data)
     image.save(figname)
 
-plot_mandelbrot(zmin=-0.7740+0.1305j, zmax=-0.7525+0.1320j, pixel_size=5e-3, max_iter=10, figname="Mandelbrot_PIL.png")
+plot_mandelbrot(zmin=-0.7740+0.1305j, zmax=-0.7525+0.1320j, pixel_size=5e-7, max_iter=100, figname="Mandelbrot_PIL.png")
 
 #print(is_in_Mandelbrot(0.255))
 
