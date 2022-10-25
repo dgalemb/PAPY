@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plot
 import numpy as np
 from PIL import Image
+from numba import jit
 from time import time
 
 
