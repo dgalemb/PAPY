@@ -58,9 +58,12 @@ def plot_mandelbrot(zmin=-2-2j, zmax=2+2j, pixel_size=5e-5, max_iter=100, fignam
     image = Image.fromarray(data)
     image.save(figname)
 
-plot_mandelbrot(zmin=-0.7740+0.1305j, zmax=-0.7525+0.1320j, pixel_size=5e-7, max_iter=100, figname="Mandelbrot_PIL.png")
+from timeit import default_timer as timer
+start = timer()
+plot_mandelbrot(zmin=-2-1.2j, zmax=0.5+1.2j, pixel_size=5e-4, max_iter=50, figname="Mandelbrot_Base.png")
+end = timer()
+print(end - start)
 
-#print(is_in_Mandelbrot(0.255))
 
 
 
