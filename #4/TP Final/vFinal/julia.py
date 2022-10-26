@@ -145,19 +145,19 @@ def plot_julia(c=-0.8j, zmin=-2-1.5j, zmax=2+1.5j, pixel_size=1e-3, max_iter=50,
 
     Parameters
     ----------
-    c : complex
+    c : complex (default is -0.8j)
         parameter c of the Julia sequence
-    zmin : complex
+    zmin : complex (default is -2-1.5j)
         coordinate of the lower left corner of the fractal section to print.
         It belongs to the complex plane.
-    zmax : complex
+    zmax : complex (default is 2+1.5j)
         coordinate of the upper right corner of the fractal section to print.
         It belongs to the complex plane.
-    pixel_size : float
+    pixel_size : float (default is 1e-3)
         size of each pixel of the image; space between the minimum and maximum coordinate values.
-    max_iter : int
+    max_iter : int (default is 50)
         number of iterations for the sequence
-    figname : str
+    figname : str (default is "Julia.png")
         name of the image to be created
 
     Returns

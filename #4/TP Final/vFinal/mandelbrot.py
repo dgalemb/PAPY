@@ -37,7 +37,7 @@ def is_in_Mandelbrot(c, max_iter=100):
     ----------
     c : complex
         parameter c of the Mandelbrot sequence
-    max_iter : int
+    max_iter : int (default is 100)
         number of iterations for the sequence
 
     Returns
@@ -128,7 +128,7 @@ def mandelbrot_set(x_min, x_max, y_min, y_max, pixel_size, max_iter):
     return n3
 
 
-def plot_mandelbrot(zmin=-2-1.2j, zmax=0.5+1.2j, pixel_size=5e-4, max_iter=50, figname='Mandelbrot.png'):
+def plot_mandelbrot(zmin=-2-1.2j, zmax=0.5+1.2j, pixel_size=5e-4, max_iter=50, figname="Mandelbrot.png"):
     """
     Function that creates and saves an image of the Mandelbrot fractal.
     It uses the Image method of the PIL package for image processing.
@@ -137,17 +137,17 @@ def plot_mandelbrot(zmin=-2-1.2j, zmax=0.5+1.2j, pixel_size=5e-4, max_iter=50, f
 
     Parameters
     ----------
-    zmin : complex
+    zmin : complex (default is -2-1.2j)
         coordinate of the lower left corner of the fractal section to print.
         It belongs to the complex plane.
-    zmax : complex
+    zmax : complex (default is 0.5+1.2j)
         coordinate of the upper right corner of the fractal section to print.
         It belongs to the complex plane.
-    pixel_size : float
+    pixel_size : float (default is 5e-4)
         size of each pixel of the image; space between the minimum and maximum coordinate values.
-    max_iter : int
+    max_iter : int (default is 50)
         number of iterations for the sequence
-    figname : str
+    figname : str (default is "Mandelbrot.png")
         name of the image to be created
 
     Returns
