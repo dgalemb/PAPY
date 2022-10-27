@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: MandelJulia
+Version: 0.1.0
+Summary: Library to visualize and Mandelbrot and Julia sets
+Author: dgalemb, nucontreras
+License: MIT
+License-File: LICENSE

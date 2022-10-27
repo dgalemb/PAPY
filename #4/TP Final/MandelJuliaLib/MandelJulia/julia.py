@@ -2,10 +2,10 @@ import numpy as np
 from PIL import Image
 from numba import jit
 
-from sequence import sequence
+from MandelJulia.sequence import sequence
 
 
-np.warnings.filterwarnings("ignore")
+np.warnings.filterwarnings("ignor
 
 
 def julia(candidate, parameter):

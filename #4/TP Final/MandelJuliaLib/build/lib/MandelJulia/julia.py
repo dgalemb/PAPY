@@ -2,42 +2,44 @@ import numpy as np
 from PIL import Image
 from numba import jit
 
-from sequence import sequence
+from MandelJulia.sequence import sequence
 
 
 np.warnings.filterwarnings("ignore")
 
 
-def mandelbrot(candidate):
+def julia(candidate, parameter):
     """
-    Defining the generator to Mandelbrot sequence (z = 0, c given)
+    Defining the generator to Julia sequence (z and c given)
 
     Parameters
     ----------
     candidate : complex
-        parameter c of the Mandelbrot sequence
+        parameter z of the Julia sequence
+    parameter : complex
+        parameter c of the Julia sequence
 
     Returns
     -------
     generator
-        a Mandelbrot sequence generator
+        a Julia sequence generator
     """
-    return sequence(z=0, c=candidate)
+    return sequence(z=candidate, c=parameter)
 
 
-def is_in_Mandelbrot(c, max_iter=100):
+def is_in_Julia(z0, c, max_iter=100):
     """
-    Defining funcion to check if wheter the Mandelbrot sequence converges for a given c and max_iter
-    Once z 'gets out' of the disc centered @ (0,0) with radius = 2, the series will diverge, and then
-    we stop the function
-    More iterations yield more precise results, specially for c's in the border
-    The default value for max_iter is 100, which generally is sufficient for most values of c
+    Defining function to check if wheter the Julia sequence converges for a given c, z0 and max_iter
+    The same observations from is_in_Julia are valid
+    Note that is_in_Julia can be equivalent to is_in_Julia <==> z0 = 0
 
     Parameters
     ----------
+    z0 : complex
+        beginning of the Julia sequence
     c : complex
-        parameter c of the Mandelbrot sequence
-    max_iter : int (default is 100)
+        parameter c of the Julia sequence
+    max_iter : int
         number of iterations for the sequence
 
     Returns
@@ -45,28 +47,30 @@ def is_in_Mandelbrot(c, max_iter=100):
     bool
         Returns True if the calculated z value belongs to the sequence.
     """
-    z = 0
+    z = z0
     for _ in range(max_iter):
         z = z ** 2 + c
     return abs(z) <= 2
 
 
 @jit
-def is_in_mandelbrot_numba(creal, cimag, maxiter):
+def is_in_julia_numba(zreal, zimag, c, maxiter):
     """
-    Modification of the is_in_Mandelbrot function for iterative use in conjunction with the numba package.
+    Modification of the is_in_Julia function for iterative use in conjunction with the numba package.
     The complex number has been previously decomposed into its real and imaginary part.
     Once z "exits" the disk centered at (0,0) with radius = 2, the series diverges and the function returns True.
     If the series does not diverge the function returns False.
     True is returned when the series diverges in order to save the photo immediately with the pillow package,
-    without having to invert the colors black and white
+    without having to invert the colors black and white.
 
     Parameters
     ----------
-    creal : float
-        The file location of the spreadsheet
-    cimag : float
-        The file location of the spreadsheet
+    zreal : float
+        real part of the complex number z of the Julia sequence.
+    zimag : float
+        imaginary part of the complex number z of the Julia sequence.
+    c : complex
+        parameter c of the Julia sequence
     maxiter : int
         number of iterations for the sequence
 
@@ -76,8 +80,10 @@ def is_in_mandelbrot_numba(creal, cimag, maxiter):
         Returns True if the calculated z value does not belong to the sequence.
         False in another case.
     """
-    real = creal
-    imag = cimag
+    real = zreal
+    imag = zimag
+    creal = c.real
+    cimag = c.imag
     for n in range(maxiter):
         real2 = real * real
         imag2 = imag * imag
@@ -89,16 +95,18 @@ def is_in_mandelbrot_numba(creal, cimag, maxiter):
 
 
 @jit
-def mandelbrot_set(x_min, x_max, y_min, y_max, pixel_size, max_iter):
+def julia_set(c, x_min, x_max, y_min, y_max, pixel_size, max_iter):
     """
     Function that creates a Boolean array with the points that belong (False) and do not belong (True)
-    to the Mandelbrot set.
+    to the Julia set.
     The matrix is created iteratively, taking into account the list r1 with the real values and another
     list r2 with the imaginary values.
     Use the jit function of the numba package to speed up the processing.
 
     Parameters
     ----------
+    c : complex
+        parameter c of the Julia sequence
     x_min : float
         minimum value of the x-coordinate
     x_max : float
@@ -124,36 +132,38 @@ def mandelbrot_set(x_min, x_max, y_min, y_max, pixel_size, max_iter):
     n3 = np.empty((width, height), dtype=bool)
     for i in range(width):
         for j in range(height):
-            n3[i, j] = is_in_mandelbrot_numba(r1[i], r2[j], max_iter)
+            n3[i, j] = is_in_julia_numba(r1[i], r2[j], c, max_iter)
     return n3
 
 
-def plot_mandelbrot(zmin=-2-1.2j, zmax=0.5+1.2j, pixel_size=5e-4, max_iter=50, figname="Mandelbrot.png"):
+def plot_julia(c=-0.8j, zmin=-2-1.5j, zmax=2+1.5j, pixel_size=1e-3, max_iter=50, figname="Julia.png"):
     """
-    Function that creates and saves an image of the Mandelbrot fractal.
+    Function that creates and saves an image of the Julia fractal.
     It uses the Image method of the PIL package for image processing.
     The Boolean matrix obtained must be transposed (z.T) due to the way its data is calculated.
     The default values are strategically given in order to display most of the values that belong to the set.
 
     Parameters
     ----------
-    zmin : complex (default is -2-1.2j)
+    c : complex (default is -0.8j)
+        parameter c of the Julia sequence
+    zmin : complex (default is -2-1.5j)
         coordinate of the lower left corner of the fractal section to print.
         It belongs to the complex plane.
-    zmax : complex (default is 0.5+1.2j)
+    zmax : complex (default is 2+1.5j)
         coordinate of the upper right corner of the fractal section to print.
         It belongs to the complex plane.
-    pixel_size : float (default is 5e-4)
+    pixel_size : float (default is 1e-3)
         size of each pixel of the image; space between the minimum and maximum coordinate values.
     max_iter : int (default is 50)
         number of iterations for the sequence
-    figname : str (default is "Mandelbrot.png")
+    figname : str (default is "Julia.png")
         name of the image to be created
 
     Returns
     -------
     None
     """
-    z = mandelbrot_set(zmin.real, zmax.real, zmin.imag, zmax.imag, pixel_size=pixel_size, max_iter=max_iter)
+    z = julia_set(c, zmin.real, zmax.real, zmin.imag, zmax.imag, pixel_size=pixel_size, max_iter=max_iter)
     image = Image.fromarray(z.T)
     image.save(figname)

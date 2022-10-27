@@ -4,8 +4,8 @@ from numba import jit
 from time import time
 import argparse
 
-from mandelbrot import mandelbrot, is_in_Mandelbrot, is_in_mandelbrot_numba, mandelbrot_set, plot_mandelbrot
-from julia import julia, is_in_Julia, is_in_julia_numba, julia_set, plot_julia
+from MandelJulia.mandelbrot import mandelbrot, is_in_Mandelbrot, is_in_mandelbrot_numba, mandelbrot_set, plot_mandelbrot
+from MandelJulia.julia import julia, is_in_Julia, is_in_julia_numba, julia_set, plot_julia
 
 
 np.warnings.filterwarnings("ignore")

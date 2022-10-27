@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+MandelJulia/__init__.py
+MandelJulia/fractales.py
+MandelJulia/julia.py
+MandelJulia/mandelbrot.py
+MandelJulia/sequence.py
+MandelJulia.egg-info/PKG-INFO
+MandelJulia.egg-info/SOURCES.txt
+MandelJulia.egg-info/dependency_links.txt
+MandelJulia.egg-info/top_level.txt
