@@ -3,7 +3,7 @@ name = "MandelJulia"
 description = "Mandelbrot and Julia set tools"
 version = "0.1.0"
 authors = [
-    { name1 = "Daniel Macedo Galembeck", name2 = "Nicolas Contreras" }
+    { name1 = "Daniel Macedo Galembeck", name2 = "Nicolas Contreras", email = 'test@t' }
 ]
 dependencies = [
     "numpy",
