@@ -5,7 +5,7 @@ from numba import jit
 from MandelJulia.sequence import sequence
 
 
-np.warnings.filterwarnings("ignor
+np.warnings.filterwarnings("ignore")
 
 
 def julia(candidate, parameter):
