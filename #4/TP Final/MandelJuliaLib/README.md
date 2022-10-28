@@ -1,18 +1,26 @@
+# Introduction
+
 Library that enables the visualization of the Mandelbrot and Julia series, as well as checking if certain constance values belong to each one of the sets.
+
+# Installing and Importing
 
 To install it, download the folder, set your path to its location and install it with pip (or pip3): pip install .
 
-Then, to import the functions described below the following command smust be made inside Python:
+Then, to import the functions described below the following command must be made inside Python:
 
->>> from MandelJulia import functions
+```
+from MandelJulia import functions
+```
 
-And so, we can use the functions simply with functions.name_of_the_function. For instance functions.is_in_Mandelbrot.
+And so, we can use the functions simply with `functions.name_of_the_function`. For instance `functions.is_in_Mandelbrot(0.25)`.
 
 If only one - or a few - of the functions are wished to be used, we can make a more direct import:
 
->>> from MandelJulia.functions import is_in_Mandelbrot
+```
+from MandelJulia.functions import is_in_Mandelbrot
+```
 
-And, use the function directly : 
+And, use the function directly: `is_in_Mandelbrot(0.25)`
 
 There are 4 functions to the library: 
 
