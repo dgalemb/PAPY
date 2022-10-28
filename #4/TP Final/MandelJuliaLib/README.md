@@ -36,7 +36,7 @@ python /path/to/MandelJulia JuliaPlot -o julia.png
 
 ***Please note***: The path here is to MandelJulia, not to MandelJuliaLib (the downloaded folder), the relative path between them is: MandelJuliaLib/MandelJulia.
 
-The commands shown produce the default images but we can change the parameters:
+The commands shown produce the default images but we can change the parameters as we wish, for instance:
 
 ```
 python /path/to/MandelJulia MandelbrotPlot 
@@ -55,7 +55,7 @@ python /path/to/MandelJulia
 
 # Functions
 
-There are 4 functions to the library: 
+There are 4 functions in the library: 
 
 - In set functions
     - is_in_Mandelbrot that checks if a certain constant belongs to the respective set
@@ -66,5 +66,6 @@ There are 4 functions to the library:
     - plot_julia plots the Julia set for a given range in the complex plane, an starting z_0, the constant c, pixel size and number of iterations
 
 Note that default values are defined for each function, so even a default image can be plotted if no argument is given.
+
 The code was optimized with the Numba library, but, even then, it may take too much time to finish the plots if the pixel size given is too small in regards to the size of the complex plane chosen and/or the max iterations given.
 

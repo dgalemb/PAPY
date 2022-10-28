@@ -1,1 +1,1 @@
-import MandelJulia.functions
+from MandelJulia import functions
