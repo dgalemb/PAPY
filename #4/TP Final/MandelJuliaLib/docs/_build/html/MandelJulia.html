@@ -1,0 +1,475 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>MandelJulia package &mdash; MandelJulia 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="MandelJuliaLib" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> MandelJulia
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">MandelJuliaLib</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">MandelJulia package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-MandelJulia.julia">MandelJulia.julia module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-MandelJulia.mandelbrot">MandelJulia.mandelbrot module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-MandelJulia.sequence">MandelJulia.sequence module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-MandelJulia">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MandelJulia</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="modules.html">MandelJuliaLib</a> &raquo;</li>
+        
+      <li>MandelJulia package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/MandelJulia.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="mandeljulia-package">
+<h1>MandelJulia package<a class="headerlink" href="#mandeljulia-package" title="Permalink to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="module-MandelJulia.julia">
+<span id="mandeljulia-julia-module"></span><h2>MandelJulia.julia module<a class="headerlink" href="#module-MandelJulia.julia" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="MandelJulia.julia.is_in_Julia">
+<span class="sig-prename descclassname"><span class="pre">MandelJulia.julia.</span></span><span class="sig-name descname"><span class="pre">is_in_Julia</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MandelJulia/julia.html#is_in_Julia"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MandelJulia.julia.is_in_Julia" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defining function to check if wheter the Julia sequence converges for a given c, z0 and max_iter
+The same observations from is_in_Julia are valid
+Note that is_in_Julia can be equivalent to is_in_Julia &lt;==&gt; z0 = 0</p>
+<dl class="simple">
+<dt>z0<span class="classifier">complex</span></dt><dd><p>beginning of the Julia sequence</p>
+</dd>
+<dt>c<span class="classifier">complex</span></dt><dd><p>parameter c of the Julia sequence</p>
+</dd>
+<dt>max_iter<span class="classifier">int</span></dt><dd><p>number of iterations for the sequence</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>Returns True if the calculated z value belongs to the sequence.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="MandelJulia.julia.is_in_julia_numba">
+<span class="sig-prename descclassname"><span class="pre">MandelJulia.julia.</span></span><span class="sig-name descname"><span class="pre">is_in_julia_numba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zreal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zimag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxiter</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MandelJulia/julia.html#is_in_julia_numba"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MandelJulia.julia.is_in_julia_numba" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modification of the is_in_Julia function for iterative use in conjunction with the numba package.
+The complex number has been previously decomposed into its real and imaginary part.
+Once z “exits” the disk centered at (0,0) with radius = 2, the series diverges and the function returns True.
+If the series does not diverge the function returns False.
+True is returned when the series diverges in order to save the photo immediately with the pillow package,
+without having to invert the colors black and white.</p>
+<dl class="simple">
+<dt>zreal<span class="classifier">float</span></dt><dd><p>real part of the complex number z of the Julia sequence.</p>
+</dd>
+<dt>zimag<span class="classifier">float</span></dt><dd><p>imaginary part of the complex number z of the Julia sequence.</p>
+</dd>
+<dt>c<span class="classifier">complex</span></dt><dd><p>parameter c of the Julia sequence</p>
+</dd>
+<dt>maxiter<span class="classifier">int</span></dt><dd><p>number of iterations for the sequence</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>Returns True if the calculated z value does not belong to the sequence.
+False in another case.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="MandelJulia.julia.julia">
+<span class="sig-prename descclassname"><span class="pre">MandelJulia.julia.</span></span><span class="sig-name descname"><span class="pre">julia</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">candidate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MandelJulia/julia.html#julia"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MandelJulia.julia.julia" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defining the generator to Julia sequence (z and c given)</p>
+<dl class="simple">
+<dt>candidate<span class="classifier">complex</span></dt><dd><p>parameter z of the Julia sequence</p>
+</dd>
+<dt>parameter<span class="classifier">complex</span></dt><dd><p>parameter c of the Julia sequence</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>generator</dt><dd><p>a Julia sequence generator</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="MandelJulia.julia.julia_set">
+<span class="sig-prename descclassname"><span class="pre">MandelJulia.julia.</span></span><span class="sig-name descname"><span class="pre">julia_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixel_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MandelJulia/julia.html#julia_set"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MandelJulia.julia.julia_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that creates a Boolean array with the points that belong (False) and do not belong (True)
+to the Julia set.
+The matrix is created iteratively, taking into account the list r1 with the real values and another
+list r2 with the imaginary values.
+Use the jit function of the numba package to speed up the processing.</p>
+<dl class="simple">
+<dt>c<span class="classifier">complex</span></dt><dd><p>parameter c of the Julia sequence</p>
+</dd>
+<dt>x_min<span class="classifier">float</span></dt><dd><p>minimum value of the x-coordinate</p>
+</dd>
+<dt>x_max<span class="classifier">float</span></dt><dd><p>maximum value of the x-coordinate</p>
+</dd>
+<dt>y_min<span class="classifier">float</span></dt><dd><p>minimum value of the y-coordinate</p>
+</dd>
+<dt>y_max<span class="classifier">float</span></dt><dd><p>maximum value of the y-coordinate</p>
+</dd>
+<dt>pixel_size<span class="classifier">float</span></dt><dd><p>size of each pixel of the image; space between the minimum and maximum coordinate values.</p>
+</dd>
+<dt>max_iter<span class="classifier">int</span></dt><dd><p>number of iterations for the sequence</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>Boolean matrix with the fractal information</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="MandelJulia.julia.plot_julia">
+<span class="sig-prename descclassname"><span class="pre">MandelJulia.julia.</span></span><span class="sig-name descname"><span class="pre">plot_julia</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">c</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">0</span> <span class="pre">-</span> <span class="pre">0.8j</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">2</span> <span class="pre">-</span> <span class="pre">1.5j</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">1.5j</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixel_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Julia.png'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MandelJulia/julia.html#plot_julia"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MandelJulia.julia.plot_julia" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that creates and saves an image of the Julia fractal.
+It uses the Image method of the PIL package for image processing.
+The Boolean matrix obtained must be transposed (z.T) due to the way its data is calculated.
+The default values are strategically given in order to display most of the values that belong to the set.</p>
+<dl class="simple">
+<dt>c<span class="classifier">complex (default is -0.8j)</span></dt><dd><p>parameter c of the Julia sequence</p>
+</dd>
+<dt>zmin<span class="classifier">complex (default is -2-1.5j)</span></dt><dd><p>coordinate of the lower left corner of the fractal section to print.
+It belongs to the complex plane.</p>
+</dd>
+<dt>zmax<span class="classifier">complex (default is 2+1.5j)</span></dt><dd><p>coordinate of the upper right corner of the fractal section to print.
+It belongs to the complex plane.</p>
+</dd>
+<dt>pixel_size<span class="classifier">float (default is 1e-3)</span></dt><dd><p>size of each pixel of the image; space between the minimum and maximum coordinate values.</p>
+</dd>
+<dt>max_iter<span class="classifier">int (default is 50)</span></dt><dd><p>number of iterations for the sequence</p>
+</dd>
+<dt>figname<span class="classifier">str (default is “Julia.png”)</span></dt><dd><p>name of the image to be created</p>
+</dd>
+</dl>
+<p>None</p>
+</dd></dl>
+
+</section>
+<section id="module-MandelJulia.mandelbrot">
+<span id="mandeljulia-mandelbrot-module"></span><h2>MandelJulia.mandelbrot module<a class="headerlink" href="#module-MandelJulia.mandelbrot" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="MandelJulia.mandelbrot.is_in_Mandelbrot">
+<span class="sig-prename descclassname"><span class="pre">MandelJulia.mandelbrot.</span></span><span class="sig-name descname"><span class="pre">is_in_Mandelbrot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MandelJulia/mandelbrot.html#is_in_Mandelbrot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MandelJulia.mandelbrot.is_in_Mandelbrot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defining funcion to check if wheter the Mandelbrot sequence converges for a given c and max_iter
+Once z ‘gets out’ of the disc centered &#64; (0,0) with radius = 2, the series will diverge, and then
+we stop the function
+More iterations yield more precise results, specially for c’s in the border
+The default value for max_iter is 100, which generally is sufficient for most values of c</p>
+<dl class="simple">
+<dt>c<span class="classifier">complex</span></dt><dd><p>parameter c of the Mandelbrot sequence</p>
+</dd>
+<dt>max_iter<span class="classifier">int (default is 100)</span></dt><dd><p>number of iterations for the sequence</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>Returns True if the calculated z value belongs to the sequence.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="MandelJulia.mandelbrot.is_in_mandelbrot_numba">
+<span class="sig-prename descclassname"><span class="pre">MandelJulia.mandelbrot.</span></span><span class="sig-name descname"><span class="pre">is_in_mandelbrot_numba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">creal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cimag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxiter</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MandelJulia/mandelbrot.html#is_in_mandelbrot_numba"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MandelJulia.mandelbrot.is_in_mandelbrot_numba" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modification of the is_in_Mandelbrot function for iterative use in conjunction with the numba package.
+The complex number has been previously decomposed into its real and imaginary part.
+Once z “exits” the disk centered at (0,0) with radius = 2, the series diverges and the function returns True.
+If the series does not diverge the function returns False.
+True is returned when the series diverges in order to save the photo immediately with the pillow package,
+without having to invert the colors black and white</p>
+<dl class="simple">
+<dt>creal<span class="classifier">float</span></dt><dd><p>The file location of the spreadsheet</p>
+</dd>
+<dt>cimag<span class="classifier">float</span></dt><dd><p>The file location of the spreadsheet</p>
+</dd>
+<dt>maxiter<span class="classifier">int</span></dt><dd><p>number of iterations for the sequence</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>bool</dt><dd><p>Returns True if the calculated z value does not belong to the sequence.
+False in another case.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="MandelJulia.mandelbrot.mandelbrot">
+<span class="sig-prename descclassname"><span class="pre">MandelJulia.mandelbrot.</span></span><span class="sig-name descname"><span class="pre">mandelbrot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">candidate</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MandelJulia/mandelbrot.html#mandelbrot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MandelJulia.mandelbrot.mandelbrot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defining the generator to Mandelbrot sequence (z = 0, c given)</p>
+<dl class="simple">
+<dt>candidate<span class="classifier">complex</span></dt><dd><p>parameter c of the Mandelbrot sequence</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>generator</dt><dd><p>a Mandelbrot sequence generator</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="MandelJulia.mandelbrot.mandelbrot_set">
+<span class="sig-prename descclassname"><span class="pre">MandelJulia.mandelbrot.</span></span><span class="sig-name descname"><span class="pre">mandelbrot_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixel_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MandelJulia/mandelbrot.html#mandelbrot_set"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MandelJulia.mandelbrot.mandelbrot_set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that creates a Boolean array with the points that belong (False) and do not belong (True)
+to the Mandelbrot set.
+The matrix is created iteratively, taking into account the list r1 with the real values and another
+list r2 with the imaginary values.
+Use the jit function of the numba package to speed up the processing.</p>
+<dl class="simple">
+<dt>x_min<span class="classifier">float</span></dt><dd><p>minimum value of the x-coordinate</p>
+</dd>
+<dt>x_max<span class="classifier">float</span></dt><dd><p>maximum value of the x-coordinate</p>
+</dd>
+<dt>y_min<span class="classifier">float</span></dt><dd><p>minimum value of the y-coordinate</p>
+</dd>
+<dt>y_max<span class="classifier">float</span></dt><dd><p>maximum value of the y-coordinate</p>
+</dd>
+<dt>pixel_size<span class="classifier">float</span></dt><dd><p>size of each pixel of the image; space between the minimum and maximum coordinate values.</p>
+</dd>
+<dt>max_iter<span class="classifier">int</span></dt><dd><p>number of iterations for the sequence</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>Boolean matrix with the fractal information</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="MandelJulia.mandelbrot.plot_mandelbrot">
+<span class="sig-prename descclassname"><span class="pre">MandelJulia.mandelbrot.</span></span><span class="sig-name descname"><span class="pre">plot_mandelbrot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">zmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">2</span> <span class="pre">-</span> <span class="pre">1.2j</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span> <span class="pre">+</span> <span class="pre">1.2j</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pixel_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0005</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Mandelbrot.png'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MandelJulia/mandelbrot.html#plot_mandelbrot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MandelJulia.mandelbrot.plot_mandelbrot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that creates and saves an image of the Mandelbrot fractal.
+It uses the Image method of the PIL package for image processing.
+The Boolean matrix obtained must be transposed (z.T) due to the way its data is calculated.
+The default values are strategically given in order to display most of the values that belong to the set.</p>
+<dl class="simple">
+<dt>zmin<span class="classifier">complex (default is -2-1.2j)</span></dt><dd><p>coordinate of the lower left corner of the fractal section to print.
+It belongs to the complex plane.</p>
+</dd>
+<dt>zmax<span class="classifier">complex (default is 0.5+1.2j)</span></dt><dd><p>coordinate of the upper right corner of the fractal section to print.
+It belongs to the complex plane.</p>
+</dd>
+<dt>pixel_size<span class="classifier">float (default is 5e-4)</span></dt><dd><p>size of each pixel of the image; space between the minimum and maximum coordinate values.</p>
+</dd>
+<dt>max_iter<span class="classifier">int (default is 50)</span></dt><dd><p>number of iterations for the sequence</p>
+</dd>
+<dt>figname<span class="classifier">str (default is “Mandelbrot.png”)</span></dt><dd><p>name of the image to be created</p>
+</dd>
+</dl>
+<p>None</p>
+</dd></dl>
+
+</section>
+<section id="module-MandelJulia.sequence">
+<span id="mandeljulia-sequence-module"></span><h2>MandelJulia.sequence module<a class="headerlink" href="#module-MandelJulia.sequence" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="MandelJulia.sequence.sequence">
+<span class="sig-prename descclassname"><span class="pre">MandelJulia.sequence.</span></span><span class="sig-name descname"><span class="pre">sequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/MandelJulia/sequence.html#sequence"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#MandelJulia.sequence.sequence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defining generic generator objet</p>
+<dl class="simple">
+<dt>c<span class="classifier">complex</span></dt><dd><p>parameter c of the Mandelbrot/Julia sequence</p>
+</dd>
+<dt>z<span class="classifier">complex</span></dt><dd><p>beginning of the Mandelbrot/Julia sequence (default is 0)</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>z<span class="classifier">complex</span></dt><dd><p>possible Mandelbrot/Julia sequence number.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-MandelJulia">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-MandelJulia" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="modules.html" class="btn btn-neutral float-left" title="MandelJuliaLib" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2022, papy
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

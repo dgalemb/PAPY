@@ -53,7 +53,8 @@ setup(
         'numpy',
         'numba',
         'Pillow',
-        'Sphinx'
+        'Sphinx',
+        'sphinx-rtd-theme'
     ],
 
     # https://pypi.org/classifiers/
