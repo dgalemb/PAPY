@@ -1,8 +1,0 @@
-LICENSE
-README.md
-setup.py
-MandelJulia.egg-info/PKG-INFO
-MandelJulia.egg-info/SOURCES.txt
-MandelJulia.egg-info/dependency_links.txt
-MandelJulia.egg-info/requires.txt
-MandelJulia.egg-info/top_level.txt
