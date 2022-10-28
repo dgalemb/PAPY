@@ -1,1 +1,1 @@
-import MandelJulia.fractales
+import MandelJulia.functions
